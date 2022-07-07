@@ -1,0 +1,16 @@
+<app-actions-toolbar
+  (onSortAscending)="onSortUsers($event)"
+  (onSortDescending)="onSortUsers($event)"
+  (onSelectAllUsers)="onSelectAll($event)"
+  (onDeleteUsers)="onDelete()"
+  (onSearchUsers)="onSearchUser($event)"
+  [selectedAny]="checkIfAnySelected()"
+></app-actions-toolbar>
+
+<div class="users">
+  <app-user-card
+    *ngFor="let user of users"
+    [user]="user"
+    (onSelectUser)="onSelect($event)"
+  ></app-user-card>
+</div>
